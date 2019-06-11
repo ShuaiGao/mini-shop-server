@@ -463,6 +463,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `openid` varchar(50) NOT NULL,
+  `unionid` varchar(50) DEFAULT NULL,
   `email` varchar(24) DEFAULT NULL,
   `nickname` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
@@ -480,9 +481,9 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES (1, 'oYf_s0OnCim9Cx7tCV-AHs_rDWXs', '666@qq.com', 'Admin6', 'pbkdf2:sha256:50000$pCWwi32D$2f51549dc2731b3f5d53c5456a602410ed0f06d2d41226f064312745e20c1dd2', 1, NULL, NULL, 1529895665, NULL, 1);
-INSERT INTO `user` VALUES (2, '999', '999@qq.com', 'Super', 'pbkdf2:sha256:50000$pCWwi32D$2f51549dc2731b3f5d53c5456a602410ed0f06d2d41226f064312745e20c1dd2', 2, NULL, NULL, 1536764841, NULL, 1);
-INSERT INTO `user` VALUES (3, '777', '777@qq.com', 'Admin7', 'pbkdf2:sha256:50000$YrYmLzfp$981a20fc95c1dfc423866be176c0a66b728a95f9c285d6b731af05349112d2f9', 1, NULL, NULL, 1536764882, NULL, 1);
+INSERT INTO `user` VALUES (1, 'oYf_s0OnCim9Cx7tCV-AHs_rDWXs', NULL, '666@qq.com', 'Admin6', 'pbkdf2:sha256:50000$pCWwi32D$2f51549dc2731b3f5d53c5456a602410ed0f06d2d41226f064312745e20c1dd2', 1, NULL, NULL, 1529895665, NULL, 1);
+INSERT INTO `user` VALUES (2, '999', NULL, '999@qq.com', 'Super', 'pbkdf2:sha256:50000$pCWwi32D$2f51549dc2731b3f5d53c5456a602410ed0f06d2d41226f064312745e20c1dd2', 2, NULL, NULL, 1536764841, NULL, 1);
+INSERT INTO `user` VALUES (3, '777', NULL, '777@qq.com', 'Admin7', 'pbkdf2:sha256:50000$YrYmLzfp$981a20fc95c1dfc423866be176c0a66b728a95f9c285d6b731af05349112d2f9', 1, NULL, NULL, 1536764882, NULL, 1);
 COMMIT;
 
 -- ----------------------------
