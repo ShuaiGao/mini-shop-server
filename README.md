@@ -86,7 +86,7 @@ $ mysql -u root -p123456 # 直接输入密码，进入(我的密码是: 123456)
 
 > mysql的每条执行以「分号」结尾
 ```
-mysql> create database zerd; # 建立数据库(zerd)
+mysql> CREATE DATABASE `zerd` DEFAULT CHARACTER SET utf8; # 建立数据库(zerd)，并设置utf8
 mysql> use zerd; # 进入该数据库
 mysql> source /home/ubuntu/mini-shop-server/zerd.sql; # 导入「mini-shop-server」目录下的sql文件
 ```
