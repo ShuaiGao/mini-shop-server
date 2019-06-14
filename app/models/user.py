@@ -64,9 +64,6 @@ class User(Base):
 		with db.auto_commit():
 			user = User()
 			user.openid = openid
-			user.unionid = ""
-			user.extend = ""
-			user.auth = 100
 			user.nickname = nickname
 			user.email = account
 			user.password = secret

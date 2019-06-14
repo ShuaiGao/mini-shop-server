@@ -93,8 +93,6 @@ class Base(db.Model):
 
 	def __init__(self):
 		self.create_time = int(datetime.now().timestamp())
-		self.delete_time = 0
-		self.update_time = 0
 
 	def __getitem__(self, item):
 		return getattr(self, item)
