@@ -16,6 +16,7 @@ api = RedPrint(name='client', description='客户端', api_doc=api_doc)
 
 
 @api.route('/register', methods=['POST'])
+@api.doc()
 def create_client():
 	form = ClientValidator().validate_for_api()  # 参数校验，直接在此抛出异常，并中指代码
 	promise = {
@@ -27,7 +28,7 @@ def create_client():
 
 def __register_user_by_email():
 	form = UserEmailValidator().validate_for_api()
-	User.register_by_email(form.nickname.data, form.account.data, form.secret.data)
+	User.register_by_email(form.openid.data, form.nickname.data, form.account.data, form.secret.data)
 
 
 '''

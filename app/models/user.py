@@ -19,11 +19,11 @@ __author__ = 'Allen7D'
 class User(Base):
 	id = Column(Integer, primary_key=True, autoincrement=True)
 	openid = Column(String(50), unique=True)
-	unionid = Column(String(50), unique=True)
+	unionid = Column(String(50), unique=False)
 	email = Column(String(24), unique=True)
-	nickname = Column(String(24), unique=True)
+	nickname = Column(String(24), unique=False)
 	extend = Column(String(255))
-	auth = Column(SmallInteger, default=1)
+	auth = Column(SmallInteger, default=100) #普通用户100，管理员10，超级管理员1
 	_user_address = db.relationship('UserAddress', backref='author', lazy='dynamic')
 	_password = Column('password', String(100))
 
@@ -59,10 +59,14 @@ class User(Base):
 			db.session.add(address)
 
 	@staticmethod
-	def register_by_email(nickname, account, secret):
+	def register_by_email(openid, nickname, account, secret):
 		"""邮箱注册"""
 		with db.auto_commit():
 			user = User()
+			user.openid = openid
+			user.unionid = ""
+			user.extend = ""
+			user.auth = 100
 			user.nickname = nickname
 			user.email = account
 			user.password = secret

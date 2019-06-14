@@ -38,7 +38,14 @@ class MyView(ModelView):
 	can_create = False
 
 	# Override displayed fields
-	column_list = ('email', 'nickname')
+	column_list = ('email', 'nickname', 'auth')
+
+	# form_overrides = dict(auth=SelectField)
+	# form_args = dict(
+ #        # Pass the choices to the `SelectField`
+ #        auth=dict(
+ #            choices=[(1, '超级管理员'), (10, '普通管理员'), (100, '普通用户')]
+ #        ))
 
 	def __init__(self, session, **kwargs):
 		# You can pass name add other parameters if you want to

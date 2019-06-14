@@ -36,6 +36,7 @@ class TokenValidator(BaseValidator):
 
 
 class UserEmailValidator(ClientValidator):
+	openid = StringField(validators=[DataRequired(),length(min=1, max=50)])
 	account = StringField(validators=[Email(message='invalidate email')])
 	secret = StringField(validators=[
 		DataRequired(),
