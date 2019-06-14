@@ -3,6 +3,7 @@
   Created by Allen7D on 2018/5/12.
 """
 from .app import Flask
+from flask_admin import Admin
 
 __author__ = 'Allen7D'
 
@@ -16,7 +17,15 @@ def create_app():
 	register_blueprint(app)
 	register_plugin(app)
 
+	create_admin(app)
 	return app
+
+
+def create_admin(app):
+	admin = Admin(app, name=u'后台管理系统')
+
+	from app.models.admin import CreateAdminView
+	CreateAdminView(admin)
 
 
 def register_plugin(app):
