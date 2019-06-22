@@ -13,6 +13,12 @@ __author__ = 'Allen7D'
 
 api = RedPrint(name='product', description='产品', api_doc=api_doc)
 
+@api.route('/all', methods=['GET'])
+@api.doc()
+def get_all_product():
+	'''获取所有产品的分类'''
+	product = Product.get_all_product()
+	return Success(product)
 
 @api.route('/recent', methods=['GET'])
 @api.doc()

@@ -20,15 +20,23 @@ api = RedPrint(name='client', description='客户端', api_doc=api_doc)
 def create_client():
 	form = ClientValidator().validate_for_api()  # 参数校验，直接在此抛出异常，并中指代码
 	promise = {
-		ClientTypeEnum.USER_EMAIL: __register_user_by_email
+		ClientTypeEnum.USER_EMAIL: __register_user_by_email,
+		ClientTypeEnum.USER_MOBILE:None,
+		ClientTypeEnum.USER_MINA:__register_user_by_mina,
+		ClientTypeEnum.USER_WX_OPEN:None,
+		ClientTypeEnum.USER_WX:__register_user_by_mina,
 	}
 	promise[form.type.data]()
 	return Success(error_code=1)
 
-
 def __register_user_by_email():
 	form = UserEmailValidator().validate_for_api()
 	User.register_by_email(form.openid.data, form.nickname.data, form.account.data, form.secret.data)
+
+
+def __register_user_by_mina():
+	form = UserEmailValidator().validate_for_api()
+	User.register_by_wx(form.openid.data)
 
 
 '''

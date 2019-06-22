@@ -25,6 +25,7 @@ def get_token():
 	promise = {
 		ClientTypeEnum.USER_EMAIL: User.verify_by_email,
 		ClientTypeEnum.USER_WX: User.verify_by_wx,
+		ClientTypeEnum.USER_MINA: User.verify_by_wx,
 		ClientTypeEnum.USER_WX_OPEN: User.verify_by_wx_open
 	}
 	# 微信登录则account为code(需要微信小程序调用wx.login接口获取), secret为空

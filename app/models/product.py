@@ -54,3 +54,7 @@ class Product(Base):
 	def get_product_detail(id):
 		return Product.query.filter_by(id=id).first_or_404(
 			e=ProductException).hide('category_id')
+
+	@staticmethod
+	def get_all_product():
+		return Product.query.all_or_404(e=ProductException)
