@@ -10,7 +10,7 @@ __author__ = 'Allen7D'
 
 # @web.route('/', defaults={'path': ''})
 # @web.route('/<path:path>')
-@web.route('/')
+@web.route('/api')
 def index():
     '''默认跳转的 API 文档'''
     return redirect('/apidocs/#/')
@@ -20,3 +20,20 @@ def index():
 def doc():
     '''跳转'''
     return redirect(url_for('web.index'))
+
+
+@web.route('/home/')
+def home_home():
+    data = {
+    	'title': "今嗨旅遊",
+    }
+    return render_template("home.html", **data)
+
+@web.route('/')
+def home():
+    data = {
+    	'title': "今嗨旅遊",
+    	"companyName":"今嗨旅游",
+    }
+    return render_template("home.html", **data)
+
