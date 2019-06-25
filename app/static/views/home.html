@@ -19,26 +19,35 @@
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#"> {{ companyName }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">产品</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">团队</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="输入..." aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-          </form>
+        <div class="container">
+          <a class="navbar-brand" href="#"> {{ companyName }}</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">产品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">团队</a>
+              </li>
+            </ul>
+            <!-- <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="输入..." aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+            </form> -->
+          </div>
+          <div class="navbar-right" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">联系我们</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -129,7 +138,7 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">公司简介 <span class="text-muted">今嗨旅游</span></h2>
+            <h3 class="featurette-heading">公司简介</h3>
             <p class="lead">北京今嗨旅游咨询服务有限公司成立于2018年1月，公司主业务涉及酒店景区产品营销推广、酒店景区管理运营、亲自家庭自驾游、公司团建会议服务等板块，目前公司业务遍布北京、河北、天津、山东、山西、陕西、安徽、江苏等地。目前公司团队30余人团队均来自知名旅游企业及酒店管理公司，并有着从事旅游业多年的业务经验，公司旗下拥有趣游玩儿、诺丹会展等知名品牌，旗下趣游玩儿公众号在北京地区拥有5万余粉丝，累计服务客户8万余人诺丹会展曾为联想、大众汽车、小米、施耐德电器、法国电信等知名企业提供过活动策划、会议服务，累计服务过的大中小公司百余家，公司致力于为客户提供全方位、高品质、一站式的旅游服务，同时也致力于与合作伙伴携手共进，互利互赢！</p>
           </div>
           <div class="col-md-5">
@@ -142,11 +151,16 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h3 class="featurette-heading">业务范围 </h3>
+            <p class="lead">自有渠道销售，OTA销售，亲子微信公众号销售于一体，继续扩大渠道覆盖范围，为酒景提供多维度，全方面，全渠道销售服务</p>
+            <p class="lead">基于全渠道销售的酒店运营托管，专业的线上销售团队，丰富的线下活动资源，提升酒店的市场占有率，保证全年酒店营收。</p>
+            <p class="lead">丰富的旅行社同行资源及企业客户资源，大量的会议团建需求，打破度假酒店平日缺课魔咒。</p>
+            <p class="lead">根据不同季节，给酒景设计不同的推广营销方案，联合各大媒体资源共同宣传。</p>
+            <p class="lead">为酒景提供创意活动策划，共同造节，线下活动执行等全套服务，为酒景增量。</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename= 'images/campany_list_2.jpeg') }}" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename= 'images/campany_list_3.jpeg') }}" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
           </div>
         </div>
 
@@ -154,11 +168,11 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h3 class="featurette-heading">选择我们</h3>
+            <p class="lead">丰富的推广资源，深度酒店合作资源；专业的运营团队，线上线下及时响应；专业的运营团队，线上线下及时响应；优质的服务，体贴入微想您所想</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename= 'images/campany_list_3.jpeg') }}" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename= 'images/campany_list_5.png') }}" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
           </div>
         </div>
 
@@ -171,6 +185,7 @@
 
       <!-- FOOTER -->
       <footer class="container">
+        <p> 联系我们 Tel:010-3402728 e-mail: jinhai@163.com </p>
         <p class="float-right"><a href="#">返回顶部</a></p>
 
         <p>&copy; 2019-2020 boringman.cn 版权所有 京ICP备19016518号 &middot; <a href="http://www.miitbeian.gov.cn/">Privacy</a> &middot; <a href="http://www.miitbeian.gov.cn/">Terms</a></p>
