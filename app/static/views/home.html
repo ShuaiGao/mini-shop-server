@@ -18,8 +18,11 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
         <div class="container">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="{{ url_for('static', filename= 'images/logo.png') }}" width="80" height="40">
+          </a>
           <a class="navbar-brand" href="#"> {{ companyName }}</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
