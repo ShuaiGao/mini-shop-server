@@ -9,6 +9,11 @@ body {
 }
 
 
+.jinhailogo {
+  width:12rem;
+  height: 3rem;
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -21,6 +26,7 @@ body {
   bottom: 3rem;
   z-index: 10;
 }
+
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
@@ -86,6 +92,11 @@ body {
 
 @media (min-width: 62em) {
   .featurette-heading {
-    margin-top: 7rem;
+    /*margin-top: 7rem;*/
   }
+}
+
+
+.one-margin-top{
+    margin-top: 1rem;
 }

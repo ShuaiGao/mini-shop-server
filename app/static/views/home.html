@@ -18,12 +18,12 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
+      <nav class="navbar navbar-expand-md navbar-reverse fixed-top bg-white">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img alt="Brand" src="{{ url_for('static', filename= 'images/logo.png') }}" width="80" height="40">
+            <img alt="Brand" src="{{ url_for('static', filename= 'images/logo.png') }}" class="jinhailogo">
           </a>
-          <a class="navbar-brand" href="#"> {{ companyName }}</a>
+          <!-- <a class="navbar-brand" href="#"> {{ companyName }}</a> -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -116,21 +116,22 @@
         <div class="row">
           <div class="col-lg-4">
             <img class="rounded-circle" src="{{ url_for('static', filename= 'images/show-1.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-            <h2>酒店</h2>
-            <p>酒店业务涉及高、中、低各种品类酒店业务，承接酒店代理，个人、团体酒店订制业务等。部分酒店业务属今嗨公司自营，并且本公司拥有独立运营的青旅民宿等业务。</p>
-            <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p>
+
+            <h2 class="one-margin-top">酒店</h2>
+            <p class="one-margin-top">酒店业务涉及高、中、低各种品类酒店业务，承接酒店代理，个人、团体酒店订制业务等。部分酒店业务属今嗨公司自营，并且本公司拥有独立运营的青旅民宿等业务。</p>
+            <!-- <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="{{ url_for('static', filename= 'images/show-2.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-            <h2>旅游</h2>
-            <p>自2019年获得旅游资质，主打私人订制高端旅游产品，为您打造专属、高端的私人旅游订制服务。</p>
-            <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p>
+            <h2 class="one-margin-top">旅游</h2>
+            <p class="one-margin-top">自2019年获得旅游资质，主打私人订制高端旅游产品，为您打造专属、高端的私人旅游订制服务。</p>
+            <!-- <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="{{ url_for('static', filename= 'images/show-3.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-            <h2>服务</h2>
-            <p>今嗨旅游为您打造高品质酒店服务和旅游服务，并专注于个人业务的私人订制服务。客户的需求就是我们第目标，我们将用心打造最优质第服务。</p>
-            <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p>
+            <h2 class="one-margin-top">服务</h2>
+            <p class="one-margin-top">今嗨旅游为您打造高品质酒店服务和旅游服务，并专注于个人业务的私人订制服务。客户的需求就是我们第目标，我们将用心打造最优质第服务。</p>
+            <!-- <p><a class="btn btn-secondary" href="#" role="button">更多 &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -142,7 +143,7 @@
         <div class="row featurette">
           <div class="col-md-7">
             <h3 class="featurette-heading">公司简介</h3>
-            <p class="lead">北京今嗨旅游咨询服务有限公司成立于2018年1月，公司主业务涉及酒店景区产品营销推广、酒店景区管理运营、亲自家庭自驾游、公司团建会议服务等板块，目前公司业务遍布北京、河北、天津、山东、山西、陕西、安徽、江苏等地。目前公司团队30余人团队均来自知名旅游企业及酒店管理公司，并有着从事旅游业多年的业务经验，公司旗下拥有趣游玩儿、诺丹会展等知名品牌，旗下趣游玩儿公众号在北京地区拥有5万余粉丝，累计服务客户8万余人诺丹会展曾为联想、大众汽车、小米、施耐德电器、法国电信等知名企业提供过活动策划、会议服务，累计服务过的大中小公司百余家，公司致力于为客户提供全方位、高品质、一站式的旅游服务，同时也致力于与合作伙伴携手共进，互利互赢！</p>
+            <p class="lead" >北京今嗨旅游咨询服务有限公司成立于2018年1月，公司主业务涉及酒店景区产品营销推广、酒店景区管理运营、亲自家庭自驾游、公司团建会议服务等板块，目前公司业务遍布北京、河北、天津、山东、山西、陕西、安徽、江苏等地。目前公司团队30余人团队均来自知名旅游企业及酒店管理公司，并有着从事旅游业多年的业务经验，公司旗下拥有趣游玩儿、诺丹会展等知名品牌，旗下趣游玩儿公众号在北京地区拥有5万余粉丝，累计服务客户8万余人诺丹会展曾为联想、大众汽车、小米、施耐德电器、法国电信等知名企业提供过活动策划、会议服务，累计服务过的大中小公司百余家，公司致力于为客户提供全方位、高品质、一站式的旅游服务，同时也致力于与合作伙伴携手共进，互利互赢！</p>
           </div>
           <div class="col-md-5">
             <!-- <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
@@ -171,7 +172,7 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h3 class="featurette-heading">选择我们</h3>
+            <h3 class="featurette-heading" style="margin-top: 1rem">选择我们</h3>
             <p class="lead">丰富的推广资源，深度酒店合作资源；专业的运营团队，线上线下及时响应；专业的运营团队，线上线下及时响应；优质的服务，体贴入微想您所想</p>
           </div>
           <div class="col-md-5">
