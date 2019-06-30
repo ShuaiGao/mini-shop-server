@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static', filename= 'images/jinhai.png') }} ">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href=" {{ url_for('static', filename= 'css/bootstrap.css') }} " rel="stylesheet">
+    <link href=" {{ url_for('static', filename= 'css/moments.css') }} " rel="stylesheet">
+    <script src="{{ url_for('static', filename= 'js/bootstrap.min.js') }} "></script>
+    <script src="{{ url_for('static', filename= 'js/jquery-slim.min.js') }} "></script>
+    <!-- <script src="https://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="{{ url_for('static', filename= 'js/popper.min.js') }} "></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+  
+    <main class="moments">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="{{ url_for('static', filename= 'images/campany_banner-1.jpg') }}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>青春团队</h1>
+                <p>如向日葵开放般自信和美好</p>
+                <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">产品展示</a></p> -->
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="body-content" id="to-content">
+        <section class="brand" id="greentech">
+          <div class="light-gray space-top">
+            <div class="content center-aligned-content">
+              <div class="row subtitle">
+                <span class="col-md-12 col-sm-12 col-xs-12">May 24 - 25, 2019</span>
+                <h3 class="col-md-12 col-sm-12 col-xs-12">我们的故事</h3>
+                <!-- <h3>GreenTech Festival Berlin</h3> -->
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 col-8 col-xs-12 offset-2 offset-md-2" style="text-align:center">
+                    <p class="mb-15">
+                      北京今嗨旅游咨询服务有限公司成立于2018年1月，公司主业务涉及酒店景区产品营销推广、酒店景区管理运营、亲自家庭自驾游、公司团建会议服务等板块，目前公司业务遍布北京、河北、天津、山东、山西、陕西、安徽、江苏等地。目前公司团队30余人团队均来自知名旅游企业及酒店管理公司，并有着从事旅游业多年的业务经验，公司旗下拥有趣游玩儿、诺丹会展等知名品牌，旗下趣游玩儿公众号在北京地区拥有5万余粉丝，累计服务客户8万余人诺丹会展曾为联想、大众汽车、小米、施耐德电器、法国电信等知名企业提供过活动策划、会议服务，累计服务过的大中小公司百余家，公司致力于为客户提供全方位、高品质、
+                    </p>
+                    <p class="mb-15">
+                      北京今嗨旅游咨询服务有限公司成立于2018年1月
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <div class="container video-wrapper video-section section">
+              <img style="width:100%" src="{{ url_for('static', filename= 'images/campany_banner-2.jpg') }}">
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+
+      <div class="body-content" id="to-content">
+        <section class="brand" id="greentech">
+          <div class="light-gray space-top">
+            <div class="content center-aligned-content">
+              <div class="row subtitle">
+                <span class="col-md-12 col-sm-12 col-xs-12">May 24 - 25, 2019</span>
+                <h3 class="col-md-12 col-sm-12 col-xs-12">你不知道的事</h3>
+                <!-- <h3>GreenTech Festival Berlin</h3> -->
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 col-8 col-xs-12 offset-2 offset-md-2" style="text-align:center">
+                    <p class="mb-15">
+                      北京今嗨旅游咨询服务有限公司成立于2018年1月，公司主业务涉及酒店景区产品营销推广、酒店景区管理运营、亲自家庭自驾游、公司团建会议服务等板块，目前公司业务遍布北京、河北、天津、山东、山西、陕西、安徽、江苏等地。目前公司团队30余人团队均来自知名旅游企业及酒店管理公司，并有着从事旅游业多年的业务经验，公司旗下拥有趣游玩儿、诺丹会展等知名品牌，旗下趣游玩儿公众号在北京地区拥有5万余粉丝，累计服务客户8万余人诺丹会展曾为联想、大众汽车、小米、施耐德电器、法国电信等知名企业提供过活动策划、会议服务，累计服务过的大中小公司百余家，公司致力于为客户提供全方位、高品质、
+                    </p>
+                    <p class="mb-15">
+                      北京今嗨旅游咨询服务有限公司成立于2018年1月
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <div class="container video-wrapper video-section section">
+              <img style="width:100%" src="{{ url_for('static', filename= 'images/campany_banner-2.jpg') }}">
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+
+
+      <!-- FOOTER -->
+      {% include "footer.html" %}
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- <script src="../../../../assets/js/vendor/holder.min.js"></script> -->
+    <script src="{{ url_for('static', filename= 'js/holder.min.js') }}"></script>
+
+{% endblock %}

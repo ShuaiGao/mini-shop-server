@@ -32,8 +32,28 @@ def home_home():
 @web.route('/')
 def home():
     data = {
+        "home":True,
     	'title': "今嗨旅遊",
     	"companyName":"今嗨旅游",
     }
     return render_template("home.html", **data)
+
+
+@web.route('/moments')
+def moments():
+    data = {
+        "moments":True,
+        'title': "今嗨旅遊",
+        "companyName":"今嗨旅游",
+    }
+    return render_template("moments.html", **data)
+
+@web.route('/team')
+def team():
+    data = {
+        "team":True,
+        'title': "今嗨旅遊",
+        "companyName":"今嗨旅游",
+    }
+    return render_template("team.html", **data)
 

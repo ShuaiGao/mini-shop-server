@@ -1,6 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
+{% extends 'base.html' %}
+
+{% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,51 +10,14 @@
     <title>{{ title }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href=" {{ url_for('static', filename= 'css/bootstrap.min.css') }} " rel="stylesheet">
+    <link href=" {{ url_for('static', filename= 'css/bootstrap.css') }} " rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href=" {{ url_for('static', filename= 'css/carousel.css') }}" rel="stylesheet">
-  </head>
-  <body>
-
-    <header>
-      <nav class="navbar navbar-expand-md navbar-reverse fixed-top bg-white">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="{{ url_for('static', filename= 'images/logo.png') }}" class="jinhailogo">
-          </a>
-          <!-- <a class="navbar-brand" href="#"> {{ companyName }}</a> -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">产品</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">团队</a>
-              </li>
-            </ul>
-            <!-- <form class="form-inline mt-2 mt-md-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="输入..." aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-            </form> -->
-          </div>
-          <div class="navbar-right" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">联系我们</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+  
     <main role="main">
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -188,14 +151,7 @@
 
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p> 联系我们 Tel:010-3402728 e-mail: jinhai@163.com </p>
-        <p class="float-right"><a href="#">返回顶部</a></p>
-
-        <p>&copy; 2019-2020 boringman.cn 版权所有 京ICP备19016518号 &middot; <a href="http://www.miitbeian.gov.cn/">Privacy</a> &middot; <a href="http://www.miitbeian.gov.cn/">Terms</a></p>
-        <!-- <p>&copy; 浙公网安备 33010602009975号 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
-        <!-- <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
-      </footer>
+      {% include "footer.html" %}
     </main>
 
     <!-- Bootstrap core JavaScript
@@ -211,5 +167,4 @@
     <!-- <script src="../../../../assets/js/vendor/holder.min.js"></script> -->
     <script src="{{ url_for('static', filename= 'js/holder.min.js') }}"></script>
 
-  </body>
-</html>
+{% endblock %}
