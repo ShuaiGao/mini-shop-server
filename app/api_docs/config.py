@@ -2,13 +2,15 @@
 """
   Created by Allen7D on 2018/11/26.
 """
-from app.libs.swagger_filed import IntegerPathFiled
+from app.libs.swagger_filed import StringQueryFiled
 
 __author__ = 'Allen7D'
 
+config_keys = StringQueryFiled(
+	name='key', description="config key", enum=["mallName",], default="mallName", required=True).data
 
 get_config_value = {
-	"parameters": ["mallName"],
+	"parameters": [config_keys],
 	"responses": {
 		"200": {
 			"description": "请求成功",
