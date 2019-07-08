@@ -28,7 +28,6 @@ class User(Base):
 	_password = Column('password', String(100))
 
 	def keys(self):
-		# return ['id', 'email', 'nickname', 'auth', 'user_address']
 		self.hide('openid', 'unionid', '_password', 'extend').append('user_address')
 		return self.fields
 

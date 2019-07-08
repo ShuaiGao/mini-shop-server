@@ -19,5 +19,5 @@ class Order(Base):
 	total_count = Column(Integer, unique=True)
 	snap_items = Column(Text)
 	snap_address = Column(String(500))
-	prepay_id = Column(String(100))
+	prepay_id = Column(String(100), unique=True)
 

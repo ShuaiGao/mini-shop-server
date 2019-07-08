@@ -65,6 +65,7 @@ def get_user():
 
 @api.route('', methods=['PUT'])
 @api.doc()
+@auth.login_required
 def update_user():
 	'''用户更改自身信息'''
 	return Success(error_code=1)
