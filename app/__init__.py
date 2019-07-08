@@ -22,8 +22,10 @@ def create_app():
 
 
 def create_admin(app):
-	admin = Admin(app, name=u'后台管理系统')
-
+	admin = Admin(app, name=u'后台管理系统', template_mode='bootstrap3')
+	app.admin = admin
+	
+	
 	from app.models.admin import CreateAdminView
 	CreateAdminView(admin)
 
