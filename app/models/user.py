@@ -67,6 +67,7 @@ class User(Base):
 			user.email = account
 			user.password = secret
 			db.session.add(user)
+		return user
 
 	@staticmethod
 	def register_by_wx(account):

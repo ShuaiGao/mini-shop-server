@@ -10,7 +10,7 @@ from app.libs.redprint import RedPrint
 from app.models.user import User
 from app.service.token import Token
 from app.validators.forms import ClientValidator, TokenValidator
-from app.api_docs import token as api_doc
+from app.api_docs.v1 import token as api_doc
 
 __author__ = 'Allen7D'
 

@@ -4,6 +4,7 @@
 """
 from .app import Flask
 from flask_admin import Admin
+# from flask_admin import AdminIndexView
 
 __author__ = 'Allen7D'
 
@@ -23,6 +24,7 @@ def create_app():
 
 def create_admin(app):
 	admin = Admin(app, name=u'后台管理系统', template_mode='bootstrap3')
+	# admin = Admin(app, name=u'后台管理系统', template_mode='bootstrap3', index_view=AdminIndexView(name="Home",template='admin.html')) //指定其他文件
 	app.admin = admin
 	
 	
@@ -45,20 +47,17 @@ def register_plugin(app):
 	# Debug模式下可以查阅 API文档
 	if app.config['DEBUG']:
 		from flasgger import Swagger
-		from app.api.v1 import create_api_tags_v1
-		from app.api.v2 import create_api_tags_v2
-		template = {
-			# 默认与 config/setting.py 的 SWAGGER 合并
-			'tags': create_api_tags_v1() + create_api_tags_v2()  # 数组
-		}
-		swagger = Swagger(template=template)  # 可以将secure.py中的SWAGGER全部写入template
+		from app.api import tags
+		# 默认与 config/setting.py 的 SWAGGER 合并
+		# 可以将secure.py中的SWAGGER全部写入template
+		swagger = Swagger(template={'tags': tags})
 		swagger.init_app(app)
 
 
 def register_blueprint(app):
 	from app.api.v1 import create_blueprint_v1
 	app.register_blueprint(create_blueprint_v1(), url_prefix='/v1')
-	from app.api.v2 import create_blueprint_v2
-	app.register_blueprint(create_blueprint_v2(), url_prefix='/v2')
+	from app.api.cms import create_blueprint_cms
+	app.register_blueprint(create_blueprint_cms(), url_prefix='/cms')
 	from app.web import web
 	app.register_blueprint(web)

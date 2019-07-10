@@ -11,8 +11,10 @@ from flask_admin import form
 from app.models.base import db
 from app.models.user import User
 from app.models.banner import Banner
-from app.models.user_address import UserAddress
-from app.models.product import Product
+from app.models.user_address import UserAddressView
+from app.models.product import ProductView
+from app.models.category import CategoryView
+
 
 
 __author__ = 'Allen7D'
@@ -30,16 +32,18 @@ class BannerView(ModelView):
 
 
 
-# class MyView(BaseView):
-# 	@expose('/')
-# 	def index(self):
-# 		return self.render("admin.html")
+class HomeView(BaseView):
+	@expose('/')
+	def index(self):
+		return self.render("admin.html")
 
 class MyView(ModelView):
 	# Disable model creation
 	# can_create = False
+	can_delete = False
 
 	# Override displayed fields
+	column_exclude_list = ['delete_time', 'update_time', 'create_time', 'status']
 	column_list = ('email', 'nickname', 'auth')
 	column_labels = {
 		'email': u"邮件",
@@ -64,13 +68,10 @@ class MyView(ModelView):
 
 def CreateAdminView(admin):
 	path = op.join(op.dirname(__file__), u'../static')
-	admin.add_view(FileAdmin(path, u'/static', name = 'Static Files'))
-	# admin.add_view(MyView(name='Hello 1', endpoint='test1', category='Test'))
-	# admin.add_view(MyView(name='Hello 2', endpoint='test2', category='Test'))
-	# admin.add_view(MyView(name='Hello 3', endpoint='test3', category='Test'))
-	# admin.add_view(MyView(name="hello"))
-	
+	admin.add_view(FileAdmin(path, u'/static', name = '文件管理'))
 	admin.add_view(BannerView(Banner, db.session, name=u'轮播图'))
 	admin.add_view(MyView(db.session, name=u'用户管理'))
-	admin.add_view(ModelView(UserAddress, db.session, name=u'地址管理'))
-	admin.add_view(ModelView(Product, db.session, name=u'商品管理'))
+	admin.add_view(ProductView(db.session, name=u'商品管理'))
+	admin.add_view(CategoryView(db.session, name=u'商品分类'))
+	admin.add_view(UserAddressView(db.session, name=u'地址管理'))
+

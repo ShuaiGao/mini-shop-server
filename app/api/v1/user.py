@@ -9,7 +9,7 @@ from app.libs.redprint import RedPrint
 from app.libs.token_auth import auth
 from app.models.base import db
 from app.models.user import User
-from app.api_docs import user as api_doc
+from app.api_docs.v1 import user as api_doc
 
 __author__ = 'Allen7D'
 

@@ -5,6 +5,7 @@
 from sqlalchemy import Column, Integer, Float, String, SmallInteger
 from sqlalchemy import desc, asc
 from sqlalchemy.orm import relationship, backref
+from flask_admin.contrib.sqla import ModelView
 
 from app.libs.error_code import ProductException
 from app.libs.utils import jsonify
@@ -54,3 +55,29 @@ class Product(Base):
 	def get_product_detail(id):
 		return Product.query.filter_by(id=id).first_or_404(
 			e=ProductException).hide('category_id')
+
+class ProductView(ModelView):
+	# Override displayed fields
+	# column_list = ('name', 'price', 'auth')
+	column_exclude_list = ['delete_time', 'update_time', 'create_time', 'status']
+	column_labels = {
+		'name': u"邮件",
+		'price':u"头像",
+		'stock':u"库存",
+		'category_id':u"分类id",
+		'img_id':u'图片id',
+	}
+
+	# form_ajax_refs = {
+	#     'Category': {
+	#         'fields': ['category_id'],
+	#         'page_size': 10
+	#     }
+	# }
+	# class MyModelView(BaseModelView):
+ #                form_ajax_refs = {
+ #                    'user': QueryAjaxModelLoader('user', db.session, User, fields=['email'], page_size=10)
+ #                }
+	def __init__(self, session, **kwargs):
+		# You can pass name add other parameters if you want to
+		super(ProductView, self).__init__(Product, session, **kwargs)

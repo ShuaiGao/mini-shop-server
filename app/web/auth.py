@@ -16,6 +16,12 @@ def index():
     return redirect('/apidocs/#/')
     # return render_template("index.html")
 
+@web.route('/admin')
+def admin():
+    '''默认跳转的 API 文档'''
+    return redirect('/admin/')
+
+
 @web.route('/doc')
 def doc():
     '''跳转'''

@@ -5,7 +5,7 @@
 from app.libs.error_code import Success
 from app.libs.redprint import RedPrint
 from app.validators.params import IDMustBePositiveInt
-from app.api_docs import config as api_doc
+from app.api_docs.v1 import config as api_doc
 from flask import request
 __author__ = 'Allen7D'
 
