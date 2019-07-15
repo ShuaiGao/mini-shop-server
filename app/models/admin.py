@@ -10,7 +10,7 @@ from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin import form
 from app.models.base import db
 from app.models.user import User
-from app.models.banner import Banner
+from app.models.banner import BannerView
 from app.models.user_address import UserAddressView
 from app.models.product import ProductView
 from app.models.category import CategoryView
@@ -21,15 +21,6 @@ __author__ = 'Allen7D'
 
 
 from wtforms.fields import SelectField
-
-class BannerView(ModelView):
-	form_overrides = dict(status=SelectField)
-	form_args = dict(
-        # Pass the choices to the `SelectField`
-        status=dict(
-            choices=[(0, 'waiting'), (1, 'in_progress'), (2, 'finished')]
-        ))
-
 
 
 class HomeView(BaseView):
@@ -65,11 +56,15 @@ class MyView(ModelView):
 		# You can pass name add other parameters if you want to
 		super(MyView, self).__init__(User, session, **kwargs)
 
+	# @expose("/new/", methods=("GET", "POST"))
+	# def create_view(self):
+	# 	return self.render("create_user.html")
+
 
 def CreateAdminView(admin):
 	path = op.join(op.dirname(__file__), u'../static')
 	admin.add_view(FileAdmin(path, u'/static', name = '文件管理'))
-	admin.add_view(BannerView(Banner, db.session, name=u'轮播图'))
+	admin.add_view(BannerView(db.session, name=u'轮播图'))
 	admin.add_view(MyView(db.session, name=u'用户管理'))
 	admin.add_view(ProductView(db.session, name=u'商品管理'))
 	admin.add_view(CategoryView(db.session, name=u'商品分类'))
